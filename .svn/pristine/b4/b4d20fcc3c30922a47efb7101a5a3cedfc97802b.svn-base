@@ -1,0 +1,40 @@
+
+var menuStatus;
+var App = new Object();
+
+App = {
+    
+    init: function() {
+	
+	  $("a.showMenu").click(function(){
+	  $("#zorb ul, #menu ul").niceScroll({
+										  touchbehavior:false, 
+										  cursorcolor:"#999", 
+										  cursoropacitymax:0.6, 
+										  cursorwidth:11,
+										  cursorborder:"1px solid #333",
+										  cursorborderradius:"6px",
+										  background:"transparent",
+										  autohidemode:"scroll"
+	  });
+            
+	  if(menuStatus != true){
+		$("#menu").show();
+		$(".ui-page-active").animate({marginLeft: 180 + 'px'}, 'fast');
+	  menuStatus = true;
+		return false;
+	  } else {
+		$(".ui-page-active").animate({marginLeft: 0 + 'px'}, 'fast');
+	  menuStatus = false;
+		return false;
+	  }
+	  });
+
+			
+	}
+	
+}
+	
+//App.init();
+
+$(App.init);

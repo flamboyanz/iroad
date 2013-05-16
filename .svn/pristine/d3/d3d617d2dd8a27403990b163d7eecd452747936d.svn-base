@@ -1,0 +1,288 @@
+<!DOCTYPE html> 
+<html>
+<head> 
+	<title>iRoadAssist</title> 
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="description" content="Road Assist">
+    
+    <link rel="stylesheet" href="css/default.min.css" type="text/css" />
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+    <link rel="stylesheet" href="css/main.css" type="text/css"/>
+    <link href='http://fonts.googleapis.com/css?family=Terminal+Dosis:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/RSVmain.min.css" type="text/css" />
+   
+
+    
+	<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+    
+    <script type="text/javascript" src="js/menuapp.js"></script>
+    
+    <script type="text/javascript" src="js/jquery.nicescroll.min.js"></script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=true&libraries=places"></script>
+
+    <script src="js/fuel_center.js"></script>
+    
+       
+
+</head>
+
+<body>
+
+	<!-- Splash screen -->
+  	 <div id="splash"> 
+	   
+	   <img id="splash-title" src="images/main2.png" alt="splash title" height="174"  width="104"/>
+       <div id="mapbg"><img id="vector" src="images/map.png" alt="map" align="middle" height="124" width="495" /></div>
+	 </div> 
+  <!-- end splash screen -->
+
+<!-- HOMEPAGE -->
+<div data-role="page" id="landing" data-title="iroadAssist">
+
+<!-- Wrapper -->
+<div class="wrapper">
+    <!-- Logo -->	
+	<div class="logo">     
+        <img src="images/logo1.png" class="roadassistlogo" alt="iRoadAssist">
+        <!--<h5 id="hero">iroadAssist</h5>-->
+    </div>
+    <div class="logo2">
+        <img src="images/woody.png"  alt="iroadAssist">
+    </div>
+    <!--END OF: Logo -->   
+    
+   <!-- Sign in -->
+   
+  <div data-role='content' class="content">
+   
+  <div data-role="collapsible" data-iconpos="right" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" >
+  
+   <h4>Login</h4>
+   
+   <div>
+   
+   		<form>
+        <input type="text" name="email" id="email" value="Username or Email Id"  /> 
+                   
+        <input type="password" name="pwd" id="password" value="Password"  />        
+        
+        <!--<select name="state" id="state">
+            <option value="Atlanta">Atlanta</option>
+            <option value="Colorado">Colorado</option>
+            <option value="Chicago">Chicago</option>
+            <option value="Connecticut">Connecticut</option>
+            <option value="Dellas">Dellas</option>
+        </select>-->
+        
+   		<a id='login-btn' href="#home" data-transition="slide" data-role="button" data-inline="true">Login</a>
+        <a id="register-btn" href="#" data-role="button" data-inline="true">Register</a>
+        
+   		</form>
+        
+   </div><!-- form wrapper div -->
+
+	</div>
+    
+    </div>
+
+    </div><!--END OF: Wrapper -->
+
+    
+</div><!-- END OF: Landing Page -->
+
+<!-- Homepage -->
+<div data-role="page" id="home" data-title="iroadAssist Home">
+
+    <!-- Header -->
+    <div data-role="header" class="header">
+       <a href="#landing" data-rel="back" data-role="button" data-theme="a" data-icon="back" data-iconpos="notext" class="ui-btn-left">Close</a>
+       <h4><img class="header-logo" src="images/logo-header.png" alt="iRoadAssist" /></h4>
+       <a href="#landing" data-rel="back" data-icon="arrow-l" data-transition="fade">Logout</a> 
+    </div><!-- END OF: Header -->
+
+
+    <!-- Wrapper -->
+    <div class="wrapper">
+    
+    	<!-- Menu-->
+    <ul class="set">
+        <li class="top-left-icon">
+        <a href="#service-locator" style="background:transparent url(images/service-icon3.png) no-repeat scroll; width:130px; height:130px;">Service Locator</a></li>
+        <li class="top-right-icon">
+        <a href="#fuel-center" style="background:transparent url(images/fuel-icon3.png) no-repeat scroll; width:130px; height:130px;">Gas Station</a>
+        </li>
+        <li class="bottom-left-icon">
+        <a href="#instore" style="background:transparent url(images/instore-icon3.png) no-repeat scroll; width:130px; height:130px;">In-Store</a>
+        </li>
+        <li class="bottom-right-icon">
+        <a href="#mycar" style="background:transparent url(images/mycar-icon3.png) no-repeat scroll; width:130px; height:130px;">Car Manager</a>
+        </li>
+    </ul><!--END OF: Menu -->
+
+    </div>
+    <!--END OF: Wrapper -->
+    
+    <div class="socialwrap" style="">
+    
+    <div class="social-container">
+    <!-- Search-->
+    <div data-role="fieldcontain" class="search-form">
+        <input type="search"  class="search-form" name="search" placeholder="Search the app" value="" />
+	</div><!--END OF: Search -->
+    
+    <!-- Social Media-->
+    <div class="social-media">
+        <a class="twitter" href="#"><img src="images/twitter.png" /></a>
+        <a class="facebook" href="#"><img src="images/facebook.png" /></a>
+        <a class="rss" href="#"><img src="images/rss.png" /></a>
+    </div><!--END OF: Social Media -->
+    </div>
+    
+    </div><!--end of social wrap-->
+    
+    <!-- Footer -->
+	<div data-role="footer" class="footer">
+        <h4>iRoadAssist Inc.</h4>
+	</div><!-- END OF: Footer -->
+    
+</div><!-- END OF: Homepage -->
+
+    
+<!-- Service locator Page -->
+<div data-role='page' id="service-locator" data-title="iroadAssist">
+
+
+<div id="menu" style="display:block; position:absolute; top:0; left:-180px;">
+		<form action="search.php" /><h3><input id="search" type="text" placeholder="Search" /> </h3></form>
+		<ul data-role="listview" data-inset="true" data-theme="a" data-dividertheme="d">
+        
+			<li data-role="list-divider" data-mini="true"><label>A</label></li>
+            <li><label><input class="custom" type="checkbox" name="checkbox-0" />Auto Parts</label></li>
+			<li><label><input class="custom" type="checkbox" name="checkbox-0" />Auto Repairs</label></li>
+            <li><label><input class="custom" type="checkbox" name="checkbox-0" />Auto Wrecking</label></li>
+            
+            <li data-role="list-divider" data-mini="true"><label>B</label></li>
+            <li><label><input class="custom" type="checkbox" name="checkbox-0" />Brake &amp; Oil</label></li>
+            
+            <li data-role="list-divider" data-mini="true"><label>C</label></li>
+            <li><label><input class="custom" type="checkbox" name="checkbox-0" />Car Alarm</label></li>
+            <li><label><input class="custom" type="checkbox" name="checkbox-0" />Car Audio</label></li>
+            <li><label><input class="custom" type="checkbox" name="checkbox-0" />Car Dealers</label></li>
+            <li><label><input class="custom" type="checkbox" name="checkbox-0" />Car Insurance</label></li>
+            <li><label><input class="custom" type="checkbox" name="checkbox-0" />Car Rentals</label></li>
+            <li><label><input class="custom" type="checkbox" name="checkbox-0" />Car Wash</label></li>
+            
+            <li data-role="list-divider" data-mini="true"><label>G</label></li>
+            <li><label><input class="custom" type="checkbox" name="checkbox-0" />Gas Stations</label></li>
+            
+            <li data-role="list-divider" data-mini="true"><label>M</label></li>
+            <li><label><input class="custom" type="checkbox" name="checkbox-0" />Mufflers &amp; Exhausts</label></li>
+            
+            <li data-role="list-divider" data-mini="true"><label>P</label></li>
+            <li><label><input class="custom" type="checkbox" name="checkbox-0" />Paint &amp; Collisions</label></li>
+            <li data-role="list-divider" data-mini="true"><label>S</label></li>
+            <li><label><input class="custom" type="checkbox" name="checkbox-0" />Smog Check</label></li>
+            <li data-role="list-divider" data-mini="true"><label>T</label></li>
+            <li><label><input class="custom" type="checkbox" name="checkbox-0" />Tires</label></li>
+            <li><label><input class="custom" type="checkbox" name="checkbox-0" />Towing</label></li>
+            <li ><label><input class="custom" type="checkbox" name="checkbox-0" />Car Alarm</label></li>
+            <li><label><input class="custom" type="checkbox" name="checkbox-0" />Car Audio</label></li>
+            <li><label><input class="custom" type="checkbox" name="checkbox-0" />Car Dealers</label></li>
+            <li><label><input class="custom" type="checkbox" name="checkbox-0" />Car Insurance</label></li>
+            <li><label><input class="custom" type="checkbox" name="checkbox-0" />Car Rentals</label></li>
+            <li><label><input class="custom" type="checkbox" name="checkbox-0" />Car Wash</label></li>
+            <li><label><input class="custom" type="checkbox" name="checkbox-0" />Gas Stations</label></li>
+            <li><label><input class="custom" type="checkbox" name="checkbox-0" />Car Audio</label></li>
+            <li><label><input class="custom" type="checkbox" name="checkbox-0" />Car Dealers</label></li>
+            <li><label><input class="custom" type="checkbox" name="checkbox-0" />Car Insurance</label></li>
+            <li><label><input class="custom" type="checkbox" name="checkbox-0" />Car Rentals</label></li>
+            <li><label><input class="custom" type="checkbox" name="checkbox-0" />Car Wash</label></li>
+            <li><label><input class="custom" type="checkbox" name="checkbox-0" />Gas Stations</label></li>
+            
+            
+		</ul>
+	</div>
+<!-- Header -->
+    <div data-role="header" class="header" style="position:relative;">
+    <a href="#" class="showMenu menu-button"><img src="images/menu-button.png" width="40" /></a>
+    <h4><img class="header-logo" src="images/logo-header.png" alt="iRoadAssist" /></h4>
+    <a href="#landing" data-rel="back" data-role="button" data-theme="a" data-icon="back" data-iconpos="notext" class="ui-btn-right">Close</a>
+       
+       
+       
+                
+            
+       
+    </div><!-- END OF: Header -->
+    
+    <!-- Wrapper -->
+    <div class="wrapper">
+    
+    
+    
+	</div>
+    <!--END OF: Wrapper -->
+    
+    <!-- Footer -->
+	<div data-role="footer" class="footer">
+        <h4>iRoadAssist Inc.</h4>
+	</div><!-- END OF: Footer -->
+
+</div>
+<!-- End of Service locator page -->
+
+<!-- Fuel locator page -->
+
+<div data-role="page" id="fuel-center" data-title="iroadAssist fuel-center">
+
+    <!-- Header -->
+    <div data-role="header" class="header">
+       <a href="#landing" data-rel="back" data-role="button" data-theme="a" data-icon="back" data-iconpos="notext" class="ui-btn-left">Close</a>
+       <h4><img class="header-logo" src="images/logo-header.png" alt="iRoadAssist" /></h4>
+       <a href="#landing" data-rel="back" data-icon="arrow-l" data-transition="fade">Logout</a> 
+    </div><!-- END OF: Header -->
+
+
+    <!-- Wrapper -->
+    <div class="wrapper">   
+ 
+    <div id="map_outer">
+        <div id="map_canvas"></div>
+        
+        <div id="directions" >
+            <div class="direction_close">
+                <a href="#"  data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right" >Close</a>
+            </div>
+            <div id="directions_inner"></div>
+        </div>
+        
+        <div class="map_buttton">
+            <a href="#popupPanel" data-rel="popup" data-transition="slide" data-position-to="selector" data-role="button">Fuel Stations</a>
+        </div>
+        <div data-role="popup" id="popupPanel" data-corners="false" data-transition="slide" data-position-to="selector" data-theme="none" data-shadow="false" data-tolerance="0,0">
+             <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="right" class="ui-btn-right" class="direction_">Close</a>
+ 
+            <div id="listing" class="span4">
+                <ul id="fuel_results"></ul>
+            </div>
+        </div>
+    </div>
+  
+    
+    </div>
+    <!--END OF: Wrapper -->
+
+    
+    <!-- Footer -->
+    <div data-role="footer" class="footer">
+        <h4>iRoadAssist Inc.</h4>
+    </div><!-- END OF: Footer -->
+    
+</div><!-- End of Fuel locator page -->
+
+</body>
+</html>
